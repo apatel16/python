@@ -1,3 +1,14 @@
+"""
+One Away: There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away.
+EXAMPLE
+pale, ple   -> true
+pales,pale -> true
+pale, bale  -> true
+pale, bae   -> false
+
+"""
+
+
 def oneEditReplace(str1, str2):
     foundDifference = False
     for i in range(len(str1)):
@@ -30,8 +41,12 @@ def oneEditAway(str1, str2):
         return oneEditInsert(str2, str1)
     else:
         return False
-    
-print(oneEditAway("ple", "pale"))
-print(oneEditAway("pale", "pales"))
-print(oneEditAway("bale", "pale"))
-print(oneEditAway("bae", "pale"))
+
+def main():
+    print(oneEditAway("ple", "pale"))
+    print(oneEditAway("pale", "pales"))
+    print(oneEditAway("bale", "pale"))
+    print(oneEditAway("bae", "pale"))
+
+if __name__ == "__main__":
+    main()
